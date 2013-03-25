@@ -10,7 +10,7 @@
 	<style type="text/css" media="screen">
 		
 		/* -----------------------------------------------------------
-		Grid 600: 12 Column Email Template
+		Table Tennis HTML Email Framework 
 		
 		@Author: 			Ben Parizek & JP Barringer
 		@Company: 		Barrel Strength Design 
@@ -152,35 +152,29 @@
 		/* Body Font-styles: */
 		
 		/* (default font style at the top) */
-		td, td p { 
+		body, td, p { 
 			font-family: arial;
 			font-size:12px;
 			line-height:18px;
 		}
 		
 		/* additional font styles as needed, in order of first appearance */
-		td.secondary-font-style, 
-		td.secondary-font-style p {
+		td.secondary-font-style {
 			font-family: arial;
 			font-size:12px;
 			line-height:18px;
 		}
+
+		p.tertiary-font-style {
+			font-family: arial;
+			font-size:12px;
+			line-height:18px;	
+		}
 		
-		/* Style for obligatory links: */
-		.view-online { }
-		.unsubscribe { }
-		
-
-
-
 		/* LAYOUT */
 		/* Layout classes, in order of first appearance within the HTML */
 
 		
-
-
-
-
 
 
 
@@ -238,8 +232,9 @@
   <tr>
     <td valign="top" align="center" class="placeholder">
     	<!-- These tables in the Content section are example tables (remove the contents and replace the placeholder title and IDs with content!) -->
-    	<strong>Introduction To Barrel Strength Email Development</strong>
-    	<br />(Use this template as a starting point for email development!)
+    	<br />
+    	<strong style="font-size:24px;">Introduction To Table Tennis</strong><br />
+    	(Use this template as a starting point for email development!)
    	</td>
   </tr>
 </table>
@@ -251,58 +246,31 @@
   <tr>
     <td valign="top" class="placeholder">
     	<!-- Note the use of table width instead of padding on the sides. We've found that this is a really clean and consistent way to do this. -->
-    	There are a few basic things to note about our development style: 
-    	<ul>
-    		<li>
-    		<em>We try to keep documents as "loose" as possible.</em> If it's possible to use stacked tables instead of tr tags, please do. If possible, stay away from heavily nested code (Nested tables are sometimes necessary, but often can be avoided, resulting in cleaner and less buggy code).
-	    	</li>
-	    	<li>
-	    		<em>We try to organize our CSS within the document</em> Everything is inlined when we upload our document, so focus is on readability during development. Remember that a single email may go through many revisions, and be worked on by multiple developers before it is finally blasted to our recipients.
-	    	</li>
-	    		<ul>
-			    	<li>
-			    		Verbose, descriptive names are great.
-			    	</li>
-			    	<li>
-			    		Comments are great. The more, the better. (We'll strip them out before blasting anything.)
-			    	</li>
-			    	<li>
-			    		We'll give images descriptive names -- within reason. Underscores can be your friend!
-			    	</li>
-			    	<li>
-			    		We use spaces, tabs and new lines in code to keep things readable -- if it doesn't need to be on one line, it probably looks better spread out.
-			    	</li>
-			    	<li>
-			    		We split CSS into sections: 
-			    			<ol>
-			    				<li>
-			    					First, there are the reset and utility styles. 
-			    				</li>
-			    				<li>
-			    					Then the IDs which we mostly apply to Tables and use to define background color. We also add IDs to each table -- even without styling -- as a short description of the table (these are stripped at upload but make development easier). 
-			    				</li>
-			    				<li>
-			    					After the IDs we have the fonts, starting with global fonts and moving down the document in order of appearance. We keep font styles separate from layout styles -- even when the same class is used -- for the sake of organization and readability. 
-			    				</li>
-			    				<li>
-			    					After the font styles come the layout styles (padding, width, border, background, etc.), in order of appearance. 
-			    				</li>
-			    				<li>
-			    					Finally, we have the mobile-specific styles. In many cases the email is not conducive to responsive design... Don't worry about these styles, we'll add them to the code or delete them as necessary before uploading.
-			    				</li>
-		    				</ol>
-			    	</li>
-			    </ul>
-	    	<li>
-	    		For all links we use 'target=_blank', including Campaign Monitor-specific tags unsubscribe and webversion.
-	    	</li>
-	    	<li>
-	    		We close our image tags and breaks!
-	    	</li>
-	    </ul>
-
-	    That's it. Thanks for working with us!
-
+    	<strong>Core concepts:</strong><br />
+    	Keep things loose: place stacked content sections in separate tables rather than multiple rows.<br />
+			Nested tables are sometimes necessary, but often can be avoided, resulting in cleaner and less buggy code.<br />
+	    Inline CSS after development (premailer.dialect.ca or your email service provider) Focus is on readability during development, and don't worry about comments (they will be stripped as well).<br />
+  		For all links we use 'target=_blank', including Campaign Monitor-specific tags unsubscribe and webversion.<br />
+  		<br />
+  		<em>We often split our CSS into sections:</em> 
+  			<ol>
+  				<li>
+  					First, there are the reset and utility styles. 
+  				</li>
+  				<li>
+  					Then the IDs which we mostly apply to Tables and use to define background color. We also add IDs to each table -- even without styling -- as a short description of the table (these are stripped at upload but make development easier). 
+  				</li>
+  				<li>
+  					After the IDs we have the fonts, starting with global fonts and moving down the document in order of appearance. We keep font styles separate from layout styles -- even when the same class is used -- for the sake of organization and readability. 
+  				</li>
+  				<li>
+  					After the font styles come the layout styles (padding, width, border, background, etc.), in order of appearance.
+  				</li>
+  				<li>
+  					Finally, we have the mobile-specific styles, which we use to override the other styles in specific circumstances (as when viewing on a phone)
+  				</li>
+				</ol>
+	    		
    	</td>
   </tr>
 </table>
